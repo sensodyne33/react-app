@@ -6,10 +6,7 @@ const Home = () => {
     const [blogs, setBlogs] = useState(null);
 
 
-    const handleDelete = (id) => {
-        const newBlogs = blogs.filter(blog=> blog.id !== id);
-        setBlogs(newBlogs)
-    }
+
 
     //useEffect is used to fetch data from json file
     useEffect(() => {
@@ -24,7 +21,7 @@ const Home = () => {
 
     return ( 
         <div className="home">
-          {blogs && <BlogList blogs={blogs} title="Cool blog" handleDelete={handleDelete}/>}
+          {blogs && <BlogList blogs={blogs} title="Cool blog"/>}
         </div>
      );
 }
